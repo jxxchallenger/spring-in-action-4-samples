@@ -32,6 +32,42 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <dependency>
+                <groupId>org.hibernate.validator</groupId>
+                <artifactId>hibernate-validator-parent</artifactId>
+                <version>6.1.0.Final</version>
+                <type>pom</type>
+            </dependency>
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-parent</artifactId>
+                <version>1.2.3</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.junit</groupId>
+                <artifactId>junit-bom</artifactId>
+                <version>${junit.jupiter.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- protobuf暂时没直接用到, 但mysql依赖 -->
+            <dependency>
+                <groupId>com.google.protobuf</groupId>
+                <artifactId>protobuf-bom</artifactId>
+                <version>3.10.0</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- guava暂时没直接用到，间接依赖 -->
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava-bom</artifactId>
+                <version>28.1-jre</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
             
             <dependency>
                 <groupId>org.aspectj</groupId>
@@ -39,11 +75,14 @@
                 <version>1.9.4</version>
             </dependency>
             
+            <!-- 已替换成logback bom -->
+            <!-- 
             <dependency>
                 <groupId>ch.qos.logback</groupId>
                 <artifactId>logback-classic</artifactId>
                 <version>1.2.3</version>
             </dependency>
+             -->
             
             <!-- 多种数据库driver 供选择 -->
             <dependency>
@@ -89,12 +128,15 @@
                 <version>1.1.21</version>
             </dependency>
             
+            <!-- 已替换成junit bom -->
+            <!-- 
             <dependency>
                 <groupId>org.junit.jupiter</groupId>
                 <artifactId>junit-jupiter</artifactId>
                 <version>${junit.jupiter.version}</version>
                 <scope>test</scope>
             </dependency>
+             -->
             <dependency>
                 <groupId>org.mockito</groupId>
                 <artifactId>mockito-core</artifactId>
