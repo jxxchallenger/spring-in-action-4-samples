@@ -37,6 +37,7 @@
                 <artifactId>hibernate-validator-parent</artifactId>
                 <version>6.1.0.Final</version>
                 <type>pom</type>
+                <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>ch.qos.logback</groupId>
