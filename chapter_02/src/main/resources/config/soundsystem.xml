@@ -10,4 +10,32 @@
                            http://www.springframework.org/schema/util
                            http://www.springframework.org/schema/util/spring-util.xsd">
     <context:component-scan base-package="io.jxxchallenger.springinaction.soundsystem"></context:component-scan>
+    <!-- XML 装配Bean -->
+    <bean id="sgtPeppers" class="io.jxxchallenger.springinaction.soundsystem.SgtPeppers"></bean>
+    
+    <bean id="cdPlayer" class="io.jxxchallenger.springinaction.soundsystem.CDPlayer">
+        <constructor-arg name="compactDisc" ref="sgtPeppers"></constructor-arg>
+    </bean>
+    
+    <bean id="blankDisc" class="io.jxxchallenger.springinaction.soundsystem.BlankDisc">
+        <property name="title" value="Sgt. Pepper's Lonely Hearts Club Band"></property>
+        <property name="artist" value="The Beatles"></property>
+        <property name="tracks">
+            <list>
+                <value>Sgt. Pepper's Lonely Hearts Club Band</value>
+                <value>With a Little Help from My Friends</value>
+                <value>Lucy in the Sky with Diamonds</value>
+                <value>Getting Better</value>
+                <value>Fixing a Hole</value>
+                <value>She's Leaving Home</value>
+                <value>Being for the Benefit of Mr. Kite!</value>
+                <value>Within You Without You</value>
+                <value>When I'm Sixty-Four</value>
+                <value>Lovely Rita</value>
+                <value>Good Morning Good Morning</value>
+                <value>Sgt. Pepper's Lonely Hearts Club Band (Reprise)</value>
+                <value>A Day in the Life</value>
+            </list>
+        </property>
+    </bean>
 </beans>
