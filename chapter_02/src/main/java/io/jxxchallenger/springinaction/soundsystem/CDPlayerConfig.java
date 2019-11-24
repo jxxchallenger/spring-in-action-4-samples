@@ -8,4 +8,14 @@ import org.springframework.context.annotation.Configuration;
 //@ComponentScan(basePackageClasses = {CompactDisc.class}) //Type Safe
 public class CDPlayerConfig {
 
+    //JavaConfig显式地装配bean
+//    @Bean
+//    public CompactDisc sgtPeppers() {
+//        return new SgtPeppers();
+//    }
+//    
+//    @Bean
+//    public MediaPlayer cdPlayer(CompactDisc compactDisc) {
+//        return new CDPlayer(compactDisc);
+//    }
 }
