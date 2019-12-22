@@ -180,5 +180,6 @@
     <modules>
         <module>chapter_01</module>
         <module>chapter_02</module>
+        <module>chapter_03</module>
     </modules>
 </project>
