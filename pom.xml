@@ -108,16 +108,19 @@
                 <groupId>com.h2database</groupId>
                 <artifactId>h2</artifactId>
                 <version>1.4.200</version>
+                <scope>runtime</scope>
             </dependency>
             <dependency>
                 <groupId>org.mariadb.jdbc</groupId>
                 <artifactId>mariadb-java-client</artifactId>
                 <version>2.5.1</version>
+                <scope>runtime</scope>
             </dependency>
             <dependency>
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
                 <version>8.0.18</version>
+                <scope>runtime</scope>
             </dependency>
             
             <!-- 多种连接池供选择 -->
@@ -166,6 +169,22 @@
                 <version>3.0.3</version>
                 <scope>provided</scope>
             </dependency>
+            <!-- JSTL -->
+            <!-- <dependency>
+                <groupId>jakarta.servlet.jsp.jstl</groupId>
+                <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
+                <version>1.2.7</version>
+            </dependency> -->
+            <dependency>
+                <groupId>org.apache.taglibs</groupId>
+                <artifactId>taglibs-standard-impl</artifactId>
+                <version>1.2.5</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.taglibs</groupId>
+                <artifactId>taglibs-standard-spec</artifactId>
+                <version>1.2.5</version>
+            </dependency>
             
             <!-- Thymeleaf -->
             <dependency>
@@ -188,7 +207,24 @@
                 <artifactId>thymeleaf-extras-springsecurity5</artifactId>
                 <version>3.0.4.RELEASE</version>
             </dependency>
-                        
+            <dependency>
+                <groupId>ognl</groupId>
+                <artifactId>ognl</artifactId>
+                <version>3.2.12</version>
+            </dependency>
+            <dependency>
+                <groupId>org.javassist</groupId>
+                <artifactId>javassist</artifactId>
+                <version>3.26.0-GA</version>
+            </dependency>
+            
+            <!-- commons -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>3.9</version>
+            </dependency>
+            
             <!-- 已替换成junit bom -->
             <!-- 
             <dependency>
@@ -204,11 +240,18 @@
                 <version>3.1.0</version>
                 <scope>test</scope>
             </dependency>
+            <dependency>
+                <groupId>org.hamcrest</groupId>
+                <artifactId>hamcrest</artifactId>
+                <version>2.2</version>
+                <scope>test</scope>
+            </dependency>
         </dependencies>
     </dependencyManagement>
     <modules>
         <module>chapter_01</module>
         <module>chapter_02</module>
         <module>chapter_03</module>
+        <module>chapter_05</module>
     </modules>
 </project>

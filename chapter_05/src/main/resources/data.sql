@@ -1,0 +1,1 @@
+INSERT INTO spittle (message, `time`, latitude, longitude) VALUES ('haha', now(), '114.109', '22.544');
