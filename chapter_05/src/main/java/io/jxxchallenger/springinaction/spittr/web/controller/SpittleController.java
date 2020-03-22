@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import io.jxxchallenger.springinaction.spittr.data.SpittleRepository;
 
@@ -17,8 +18,8 @@ public class SpittleController {
     private SpittleRepository spittleRepository;
     
     @GetMapping(produces = {MediaType.TEXT_HTML_VALUE})
-    public String spittles(Model model) {
-        model.addAttribute(spittleRepository.findSpittles(Long.MAX_VALUE, 20));
+    public String spittles(@RequestParam(defaultValue = "9223372036854775807") long max, @RequestParam(defaultValue = "20") int count, Model model) {
+        model.addAttribute(spittleRepository.findSpittles(max, count));
         return "spittles";
     }
 }
