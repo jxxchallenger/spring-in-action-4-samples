@@ -35,8 +35,10 @@ public class JdbcSpittleRepository implements SpittleRepository {
 
     @Override
     public Spittle findOne(long id) {
-        // TODO Auto-generated method stub
-        return null;
+        
+        return this.namedParameterJdbcOperations.queryForObject("SELECT id, message, `time`, latitude, longitude FROM spittle WHERE id = :id", new MapSqlParameterSource("id", id), (rs, num) -> {
+            return new Spittle(rs.getLong(1), rs.getString(2), LocalDateTime.parse(rs.getString(3), DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS")), rs.getDouble(4), rs.getDouble(5));
+        });
     }
 
     @Override
