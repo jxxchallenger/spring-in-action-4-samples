@@ -12,8 +12,8 @@
 </head>
 <body>
     <div class="container-fluid">
-        <div class="row justify-content-center">
-            <div class="col-lg-3">
+        <div class="row justify-content-center align-items-center" style="height: 900px;">
+            <div class="col-lg-3 col-xs-12">
                 <h1>Register</h1>
                 <form method="post">
                     <div class="form-group row">
@@ -48,7 +48,7 @@
                     </div>
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary offset-md-3">Submit</button>
-                        <button type="reset" class="btn btn-secondary">Reset</button>
+                        <button type="reset" class="btn btn-secondary offset-md-1">Reset</button>
                     </div>
                 </form>
             </div>

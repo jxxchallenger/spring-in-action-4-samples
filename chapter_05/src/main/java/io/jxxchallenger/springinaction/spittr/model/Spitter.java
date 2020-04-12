@@ -1,17 +1,30 @@
 package io.jxxchallenger.springinaction.spittr.model;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
+
 public class Spitter {
 
     private long id;
     
+    @NotEmpty
+    @Size(min = 2, max = 30)
     private String firstName;
     
+    @NotEmpty
+    @Size(min = 2, max = 30)
     private String lastName;
     
+    @NotEmpty
+    @Size(min = 5, max = 16)
     private String username;
     
+    @NotEmpty
+    @Size(min = 5, max = 25)
     private String password;
     
+    @Email
     private String email;
 
     public Spitter() {

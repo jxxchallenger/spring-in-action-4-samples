@@ -28,7 +28,9 @@ public class JdbcSpittleRepository implements SpittleRepository {
     @Override
     public List<Spittle> findSpittles(long max, int count) {
         
-        return this.namedParameterJdbcOperations.query("SELECT id, message, `time`, latitude, longitude FROM spittle WHERE id < :max ORDER BY `time` DESC LIMIT 20", new MapSqlParameterSource("max", max), (rs, num) -> {
+        MapSqlParameterSource paramSource = new MapSqlParameterSource("max", max);
+        paramSource.addValue("count", count);
+        return this.namedParameterJdbcOperations.query("SELECT id, message, `time`, latitude, longitude FROM spittle WHERE id < :max ORDER BY `time` DESC LIMIT :count", paramSource, (rs, num) -> {
             return new Spittle(rs.getLong(1), rs.getString(2), LocalDateTime.parse(rs.getString(3), DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS")), rs.getDouble(4), rs.getDouble(5));
         });
     }
