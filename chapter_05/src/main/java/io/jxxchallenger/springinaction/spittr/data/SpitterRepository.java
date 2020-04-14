@@ -2,7 +2,7 @@ package io.jxxchallenger.springinaction.spittr.data;
 
 import io.jxxchallenger.springinaction.spittr.model.Spitter;
 
-public interface SpitterRepostitory {
+public interface SpitterRepository {
 
     int save(Spitter spitter);
     

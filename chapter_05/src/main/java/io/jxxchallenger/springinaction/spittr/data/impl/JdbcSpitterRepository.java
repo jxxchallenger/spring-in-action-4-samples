@@ -10,18 +10,18 @@ import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsertOperations;
 import org.springframework.stereotype.Repository;
 
-import io.jxxchallenger.springinaction.spittr.data.SpitterRepostitory;
+import io.jxxchallenger.springinaction.spittr.data.SpitterRepository;
 import io.jxxchallenger.springinaction.spittr.model.Spitter;
 
 @Repository
-public class JdbcSpitterRepostitory implements SpitterRepostitory {
+public class JdbcSpitterRepository implements SpitterRepository {
 
     private NamedParameterJdbcOperations namedParameterJdbcOperations;
     
     private SimpleJdbcInsertOperations simpleJdbcInsertOperations;
     
     @Autowired
-    public JdbcSpitterRepostitory(NamedParameterJdbcOperations namedParameterJdbcOperations, DataSource dataSource) {
+    public JdbcSpitterRepository(NamedParameterJdbcOperations namedParameterJdbcOperations, DataSource dataSource) {
         super();
         this.namedParameterJdbcOperations = namedParameterJdbcOperations;
         this.simpleJdbcInsertOperations = new SimpleJdbcInsert(dataSource).withTableName("spitter").usingGeneratedKeyColumns("id");

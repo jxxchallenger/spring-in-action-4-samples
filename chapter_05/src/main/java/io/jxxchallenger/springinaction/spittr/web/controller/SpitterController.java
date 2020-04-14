@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import io.jxxchallenger.springinaction.spittr.data.SpitterRepostitory;
+import io.jxxchallenger.springinaction.spittr.data.SpitterRepository;
 import io.jxxchallenger.springinaction.spittr.model.Spitter;
 
 @Controller
@@ -19,7 +19,7 @@ import io.jxxchallenger.springinaction.spittr.model.Spitter;
 public class SpitterController {
 
     @Autowired
-    private SpitterRepostitory spitterRepostitory;
+    private SpitterRepository spitterRepository;
     
     @GetMapping(value = {"/register"})
     public String showRegistrationForm() {
@@ -33,13 +33,13 @@ public class SpitterController {
             return "registerForm";
         }
         
-        this.spitterRepostitory.save(spitter);
+        this.spitterRepository.save(spitter);
         return "redirect:/spitter/" + spitter.getUsername();
     }
     
     @GetMapping(value = {"/{username}"})
     public String showSpitterProfile(@PathVariable String username, Model model) {
-        model.addAttribute(this.spitterRepostitory.findByUsername(username));
+        model.addAttribute(this.spitterRepository.findByUsername(username));
         return "profile";
     }
 }
