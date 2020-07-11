@@ -79,7 +79,7 @@
             <artifactId>hibernate-validator</artifactId>
         </dependency>
 
-        <!-- <dependency>
+        <dependency>
             <groupId>org.thymeleaf</groupId>
             <artifactId>thymeleaf</artifactId>
         </dependency>
@@ -90,7 +90,7 @@
         <dependency>
             <groupId>org.thymeleaf.extras</groupId>
             <artifactId>thymeleaf-extras-java8time</artifactId>
-        </dependency> -->
+        </dependency>
         
         
         <dependency>
