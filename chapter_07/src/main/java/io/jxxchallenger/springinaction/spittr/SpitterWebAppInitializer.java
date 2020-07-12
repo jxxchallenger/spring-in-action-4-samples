@@ -12,29 +12,32 @@ import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatche
 import io.jxxchallenger.springinaction.spittr.config.RootConfig;
 import io.jxxchallenger.springinaction.spittr.web.config.WebConfig;
 
-public class SpitterWebAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
+public class SpitterWebAppInitializer /*
+                                       * extends
+                                       * AbstractAnnotationConfigDispatcherServletInitializer
+                                       */ {
 
-    @Override
+    //@Override
     protected Class<?>[] getRootConfigClasses() {
         return new Class<?>[] {RootConfig.class};
     }
 
-    @Override
+    //@Override
     protected Class<?>[] getServletConfigClasses() {
         return new Class<?>[] {WebConfig.class};
     }
 
-    @Override
+    //@Override
     protected String[] getServletMappings() {
         return new String[] {"/"};
     }
 
-    @Override
+    //@Override
     protected Filter[] getServletFilters() {
         return new Filter[] { new CharacterEncodingFilter(StandardCharsets.UTF_8.displayName(), true), new HiddenHttpMethodFilter() };
     }
 
-    @Override
+    //@Override
     protected void customizeRegistration(Dynamic registration) {
         // TODO Auto-generated method stub
         registration.setInitParameter("enableLoggingRequestDetails", "true");
