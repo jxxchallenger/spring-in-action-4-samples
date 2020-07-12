@@ -1,9 +1,11 @@
 package io.jxxchallenger.springinaction.spittr.web.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,5 +30,10 @@ public class SpittleController {
     public String spittle(@PathVariable long spittleId, Model model) {
         model.addAttribute(this.spittleRepository.findOne(spittleId));
         return "spittle";
+    }
+    
+    @ExceptionHandler(value = {EmptyResultDataAccessException.class})
+    public String handlerEmpty() {
+        return "404";
     }
 }
