@@ -11,13 +11,14 @@ import org.springframework.web.filter.HiddenHttpMethodFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 import io.jxxchallenger.springinaction.spittr.config.RootConfig;
+import io.jxxchallenger.springinaction.spittr.security.config.SecurityConfig;
 import io.jxxchallenger.springinaction.spittr.web.config.WebConfig;
 
 public class SpitterWebAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 
     @Override
     protected Class<?>[] getRootConfigClasses() {
-        return new Class<?>[] {RootConfig.class};
+        return new Class<?>[] {RootConfig.class, SecurityConfig.class};
     }
 
     @Override
