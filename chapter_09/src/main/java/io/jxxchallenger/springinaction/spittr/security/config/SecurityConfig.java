@@ -41,7 +41,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         .and()
         .requiresChannel()
         .antMatchers("/spitter/register").requiresSecure()
-        .antMatchers("/").requiresInsecure();
+        .antMatchers("/").requiresInsecure()
+        .and().rememberMe().tokenValiditySeconds(102400);
         //.and().csrf().disable(); //禁用CSRF防护
     }
 
