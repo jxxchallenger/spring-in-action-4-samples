@@ -269,6 +269,7 @@
         <module>chapter_05</module>
         <module>chapter_06</module>
         <module>chapter_07</module>
-    <module>chapter_09</module>
-  </modules>
+        <module>chapter_09</module>
+        <module>chapter_10</module>
+    </modules>
 </project>
