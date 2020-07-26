@@ -37,7 +37,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         //.antMatchers(HttpMethod.POST, "/spittles").hasAnyRole("USER", "ADMIN")
         .anyRequest().permitAll()
         .and()
-        .formLogin()
+        .formLogin().loginPage("/login")
         .and()
         .requiresChannel()
         .antMatchers("/spitter/register").requiresSecure()
