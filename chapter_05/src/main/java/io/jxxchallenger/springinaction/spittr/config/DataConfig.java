@@ -42,6 +42,32 @@ public class DataConfig {
         return new HikariDataSource(config);
     }
     
+//    @Profile(value = {"category"})
+//    @Bean
+//    public DataSource categoryDataSource() {
+//        HikariConfig config = new HikariConfig();
+//        config.setDriverClassName("com.mysql.cj.jdbc.Driver");
+//        //config.setDataSourceClassName("com.mysql.cj.jdbc.MysqlConnectionPoolDataSource");
+//        config.setJdbcUrl("jdbc:mysql://localhost:3306/library");
+//        config.setUsername("cwx566533");
+//        config.setPassword("123456");
+//        //config.addDataSourceProperty("autoCommit", true);
+//        config.addDataSourceProperty("connectionTimeout", 30000);
+//        config.addDataSourceProperty("idleTimeout", 600000);
+//        config.addDataSourceProperty("maxLifetime", 1800000);
+//        config.addDataSourceProperty("allowMultiQueries", true);
+//        config.addDataSourceProperty("cachePrepStmts", true);
+//        config.addDataSourceProperty("allowMultiQueries", true);
+//        config.addDataSourceProperty("prepStmtCacheSize", 250);
+//        config.addDataSourceProperty("prepStmtCacheSqlLimit", 2048);
+//        config.addDataSourceProperty("useServerPrepStmts", true);
+//        config.addDataSourceProperty("useLocalSessionState", true);
+//        config.addDataSourceProperty("rewriteBatchedStatements", true);
+//        config.addDataSourceProperty("cacheResultSetMetadata", true);
+//        config.addDataSourceProperty("cacheServerConfiguration", true);
+//        return new HikariDataSource(config);
+//    }
+    
     @Profile(value = {"dev"})
     @Order
     @Bean
