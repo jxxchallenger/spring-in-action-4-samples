@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="container-fluid">
-        <div class="row float-right">
+        <div class="row float-right" sec:authorize="isAuthenticated()">
             <form class="form-inline" th:method="post" th:action="@{/logout}">
                 <button type="submit" class="btn btn-primary mb-2">Submit</button>
             </form>
