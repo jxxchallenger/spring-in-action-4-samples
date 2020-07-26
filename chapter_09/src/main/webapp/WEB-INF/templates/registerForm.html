@@ -10,6 +10,11 @@
 </head>
 <body>
     <div class="container-fluid">
+        <div class="row float-right">
+            <form class="form-inline" th:method="post" th:action="@{/logout}">
+                <button type="submit" class="btn btn-primary mb-2">Submit</button>
+            </form>
+        </div>
         <div class="row justify-content-center align-items-center" style="height: 900px;">
             <div class="col-lg-3 col-xs-12">
                 <h1>[[#{spittr.spitter.register}]]</h1>
