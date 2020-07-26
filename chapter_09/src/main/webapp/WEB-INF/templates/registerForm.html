@@ -13,7 +13,7 @@
         <div class="row justify-content-center align-items-center" style="height: 900px;">
             <div class="col-lg-3 col-xs-12">
                 <h1>[[#{spittr.spitter.register}]]</h1>
-                <form method="post" th:object="${spitter}">
+                <form th:method="post" th:object="${spitter}" th:action="@{/spitter/register}">
                     <div class="form-group row" th:if="${#fields.hasErrors('*')}">
                         <ul>
                             <li th:each="err:${#fields.errors('*')}" th:text="${err}"></li>
