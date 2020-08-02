@@ -10,7 +10,7 @@
     <url>https://github.com/jxxchallenger/spring-in-action-4-samples</url>
     
     <properties>
-        <spring.version>5.2.0.RELEASE</spring.version>
+        <spring.version>5.2.8.RELEASE</spring.version>
         <spring.security.version>5.2.1.RELEASE</spring.security.version>
         <junit.jupiter.version>5.6.2</junit.jupiter.version>
         
@@ -153,6 +153,17 @@
                 <artifactId>mysql-connector-java</artifactId>
                 <version>8.0.18</version>
                 <scope>runtime</scope>
+            </dependency>
+            
+            <dependency>
+                <groupId>io.lettuce</groupId>
+                <artifactId>lettuce-core</artifactId>
+                <version>5.3.2.RELEASE</version>
+            </dependency>
+            <dependency>
+                <groupId>redis.clients</groupId>
+                <artifactId>jedis</artifactId>
+                <version>3.3.0</version>
             </dependency>
             
             <!-- 多种连接池供选择 -->
