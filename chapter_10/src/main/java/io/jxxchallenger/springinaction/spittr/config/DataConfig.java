@@ -18,7 +18,6 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.jdbc.datasource.init.DatabasePopulatorUtils;
 import org.springframework.jdbc.datasource.init.ResourceDatabasePopulator;
-import org.springframework.jndi.JndiObjectFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.zaxxer.hikari.HikariConfig;
@@ -31,17 +30,17 @@ import io.jxxchallenger.springinaction.spittr.data.SpittleRepository;
 @ComponentScan(basePackageClasses = {SpittleRepository.class})
 public class DataConfig {
 
-//    @Profile(value = {"dev"})
-//    @Bean(destroyMethod = "close")
-//    @Order(value = Ordered.HIGHEST_PRECEDENCE)
-//    public DataSource dataSource() {
-//        HikariConfig config = new HikariConfig();
-//        config.setDriverClassName("org.h2.Driver");
-//        config.setJdbcUrl("jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false");
-//        config.setUsername("sa");
-//        config.setPassword("123456");
-//        return new HikariDataSource(config);
-//    }
+    @Profile(value = {"dev"})
+    @Bean(destroyMethod = "close")
+    @Order(value = Ordered.HIGHEST_PRECEDENCE)
+    public DataSource dataSource() {
+        HikariConfig config = new HikariConfig();
+        config.setDriverClassName("org.h2.Driver");
+        config.setJdbcUrl("jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false");
+        config.setUsername("sa");
+        config.setPassword("123456");
+        return new HikariDataSource(config);
+    }
     
     @Profile(value = {"dev"})
     @Order
@@ -55,16 +54,16 @@ public class DataConfig {
         return RoundingMode.UP;
     }
     
-    @Profile(value = {"dev"})
-    @Order(value = Ordered.HIGHEST_PRECEDENCE)
-    @Bean
-    public JndiObjectFactoryBean dataSource() {
-        JndiObjectFactoryBean jndiObjectFactoryBean = new JndiObjectFactoryBean();
-        jndiObjectFactoryBean.setJndiName("jdbc/EmployeeDB");
-        jndiObjectFactoryBean.setResourceRef(true);
-        jndiObjectFactoryBean.setProxyInterface(DataSource.class);
-        return jndiObjectFactoryBean;
-    }
+//    @Profile(value = {"dev"})
+//    @Order(value = Ordered.HIGHEST_PRECEDENCE)
+//    @Bean
+//    public JndiObjectFactoryBean dataSource() {
+//        JndiObjectFactoryBean jndiObjectFactoryBean = new JndiObjectFactoryBean();
+//        jndiObjectFactoryBean.setJndiName("jdbc/EmployeeDB");
+//        jndiObjectFactoryBean.setResourceRef(true);
+//        jndiObjectFactoryBean.setProxyInterface(DataSource.class);
+//        return jndiObjectFactoryBean;
+//    }
     
     @Bean
     public JdbcOperations jdbcTemplate(DataSource dataSource) {
