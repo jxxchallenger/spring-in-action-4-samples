@@ -288,6 +288,13 @@
                 <scope>test</scope>
             </dependency>
              -->
+            <!-- chapter 19 email -->
+            <dependency>
+                <groupId>com.sun.mail</groupId>
+                <artifactId>jakarta.mail</artifactId>
+                <version>1.6.5</version>
+            </dependency>
+             
             <dependency>
                 <groupId>org.mockito</groupId>
                 <artifactId>mockito-core</artifactId>
@@ -318,5 +325,6 @@
         <module>chapter_09</module>
         <module>chapter_10</module>
         <module>chapter_13</module>
+        <module>chapter_19</module>
     </modules>
 </project>
