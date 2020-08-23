@@ -325,6 +325,7 @@
         <module>chapter_09</module>
         <module>chapter_10</module>
         <module>chapter_13</module>
+        <module>chapter_16</module>
         <module>chapter_19</module>
     </modules>
 </project>
